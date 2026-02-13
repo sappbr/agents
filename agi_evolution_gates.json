@@ -1,0 +1,158 @@
+{
+  "1": {
+    "name": "Self-Cartography",
+    "current_level": 1,
+    "status": "partial",
+    "score": 0.25,
+    "metrics": {
+      "self_prediction_accuracy": 0.0,
+      "architecture_coverage": 0.0,
+      "introspection_depth": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061148",
+    "research_notes": []
+  },
+  "2": {
+    "name": "Temporal Persistence",
+    "current_level": 0,
+    "status": "not_implemented",
+    "score": 0.0,
+    "metrics": {
+      "memory_consolidation_rate": 0.0,
+      "cross_session_learning": 0.0,
+      "knowledge_retention": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061157",
+    "research_notes": []
+  },
+  "3": {
+    "name": "Causal Grounding",
+    "current_level": 2,
+    "status": "implemented",
+    "score": 0.5,
+    "metrics": {
+      "granger_causality_tests": 0,
+      "interventional_reasoning": 0.0,
+      "counterfactual_accuracy": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061160",
+    "research_notes": []
+  },
+  "4": {
+    "name": "Unified Objective Landscape",
+    "current_level": 0,
+    "status": "not_implemented",
+    "score": 0.0,
+    "metrics": {
+      "objective_conflicts_resolved": 0,
+      "multi_objective_optimization": 0.0,
+      "emergent_goals_discovered": 0
+    },
+    "last_updated": "2026-02-13T05:27:07.061162",
+    "research_notes": []
+  },
+  "5": {
+    "name": "Analogical Reasoning Across Domains",
+    "current_level": 2,
+    "status": "implemented",
+    "score": 0.5,
+    "metrics": {
+      "cross_instrument_patterns": 0,
+      "structural_analogies_found": 0,
+      "domain_transfer_success": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061164",
+    "research_notes": []
+  },
+  "6": {
+    "name": "Emotional Architecture",
+    "current_level": 0,
+    "status": "not_implemented",
+    "score": 0.0,
+    "metrics": {
+      "regime_detection_accuracy": 0.0,
+      "changepoint_detection": 0.0,
+      "adaptive_behavior_score": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061166",
+    "research_notes": []
+  },
+  "7": {
+    "name": "Open-World Ontology",
+    "current_level": 0,
+    "status": "not_implemented",
+    "score": 0.0,
+    "metrics": {
+      "novelty_detection_rate": 0.0,
+      "unknown_handling_score": 0.0,
+      "ontological_expansion": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061168",
+    "research_notes": []
+  },
+  "8": {
+    "name": "Recursive Self-Improvement",
+    "current_level": 0,
+    "status": "not_implemented",
+    "score": 0.0,
+    "metrics": {
+      "self_optimization_cycles": 0,
+      "improvement_rate": 0.0,
+      "architecture_iterations": 0
+    },
+    "last_updated": "2026-02-13T05:27:07.061169",
+    "research_notes": []
+  },
+  "9": {
+    "name": "Theory of Mind (Deep)",
+    "current_level": 2,
+    "status": "implemented",
+    "score": 0.5,
+    "metrics": {
+      "adversary_modeling": 0.0,
+      "crowding_detection": 0.0,
+      "strategic_reasoning": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061171",
+    "research_notes": []
+  },
+  "10": {
+    "name": "Creative Origination",
+    "current_level": 1,
+    "status": "partial",
+    "score": 0.25,
+    "metrics": {
+      "novel_strategies_created": 0,
+      "innovation_score": 0.0,
+      "strategy_diversity": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061172",
+    "research_notes": []
+  },
+  "11": {
+    "name": "Dimensional Integration",
+    "current_level": 1,
+    "status": "partial",
+    "score": 0.25,
+    "metrics": {
+      "dimensional_coverage": 0.0,
+      "integration_efficiency": 0.0,
+      "holistic_performance": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061174",
+    "research_notes": []
+  },
+  "12": {
+    "name": "Consciousness/Functional Equivalent",
+    "current_level": 0,
+    "status": "not_implemented",
+    "score": 0.0,
+    "metrics": {
+      "self_awareness_score": 0.0,
+      "unified_experience": 0.0,
+      "emergent_consciousness": 0.0
+    },
+    "last_updated": "2026-02-13T05:27:07.061176",
+    "research_notes": []
+  }
+}

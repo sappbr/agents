@@ -70,6 +70,8 @@ class Polymarket:
         self._init_approvals(False)
 
     def _init_api_keys(self) -> None:
+        if not self.private_key:
+            return
         self.client = ClobClient(
             self.clob_url, key=self.private_key, chain_id=self.chain_id
         )
@@ -356,6 +358,24 @@ class Polymarket:
             self.get_address_for_private_key()
         ).call()
         return float(balance_res / 10e5)
+
+    def get_historical_prices(self, token_id: str, start_ts: int, end_ts: int, interval: str = "1d") -> list:
+        """
+        Fetch historical price data for a market token
+        """
+        url = f"{self.clob_url}/prices-history"
+        params = {
+            "market": token_id,
+            "startTs": start_ts,
+            "endTs": end_ts,
+            "interval": interval
+        }
+        res = httpx.get(url, params=params)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            print(f"Error fetching historical prices: {res.status_code}")
+            return []
 
 
 def test():

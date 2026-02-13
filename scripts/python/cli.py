@@ -124,5 +124,29 @@ def run_autonomous_trader() -> None:
     trader.one_best_trade()
 
 
+@app.command()
+def run_backtest(days: int = 365, start_capital: float = 50.0) -> None:
+    """
+    Run a comprehensive backtest using all bot capabilities
+    """
+    from backtest_engine import BacktestEngine
+
+    print(f"Running backtest for {days} days with ${start_capital} starting capital...")
+
+    engine = BacktestEngine(start_capital=start_capital)
+    historical_data = engine.download_historical_data(days=days)
+
+    if not historical_data:
+        print("No historical data available for backtest")
+        return
+
+    engine.run_backtest(historical_data, days=days)
+
+    suggestions = engine.get_optimization_suggestions()
+    print("\nOptimization Suggestions:")
+    for suggestion in suggestions:
+        print(f"- {suggestion}")
+
+
 if __name__ == "__main__":
     app()
