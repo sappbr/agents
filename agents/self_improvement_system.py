@@ -159,9 +159,12 @@ class SelfImprovementSystem:
                 self._update_agi_framework_with_improvements(best_result)
 
         if best_result:
-            print("
-✅ Optimization completed!"            print(f"Best parameters: {best_result.parameters}")
-            print(".4f"            print(".1f"        else:
+            print("\n✅ Optimization completed!")
+            print(f"Best parameters: {best_result.parameters}")
+            print(f"Best score: {best_result.performance_score:.4f}")
+            improvement = ((best_result.performance_score - self.best_score) / self.best_score) * 100
+            print(f"Improvement: {improvement:.1f}%")
+        else:
             print("\n❌ Optimization failed to find improvements")
 
         return best_result
@@ -350,7 +353,7 @@ class SelfImprovementSystem:
         best_params = study.best_params
         best_score, best_backtest = self._evaluate_parameters(best_params)
 
-        improvement_pct = ((best_score - self.best_score) / self.best_score * 100) if self.best_score > 0 else 0
+        improvement_pct = ((best_score - self.best_score) / self.best_score) * 100
 
         result = OptimizationResult(
             parameters=best_params,
@@ -368,7 +371,8 @@ class SelfImprovementSystem:
         self._save_optimization_history()
         self._update_agi_framework_with_improvements(result)
 
-        print("✅ Bayesian optimization completed!"        print(f"Best score: {best_score:.4f}")
+        print("✅ Bayesian optimization completed!")
+        print(f"Best score: {result.score:.4f}")
         print(f"Improvement: {improvement_pct:.1f}%")
 
         return result
@@ -439,13 +443,13 @@ if __name__ == "__main__":
     result = system.run_automated_optimization(generations=2, population_size=4)
 
     if result:
-        print("
-📊 Optimization Results:"        print(f"Best Score: {result.performance_score:.4f}")
+        print("\n📊 Optimization Results:")
+        print(f"Best Score: {result.performance_score:.4f}")
         print(f"Improvement: {result.improvement_pct:.1f}%")
         print(f"Parameters: {result.parameters}")
 
     # Get recommendations
     recommendations = system.get_optimization_recommendations()
-    print("
-💡 Recommendations:"    for rec in recommendations:
+    print("\n💡 Recommendations:")
+    for rec in recommendations:
         print(f"- {rec}")

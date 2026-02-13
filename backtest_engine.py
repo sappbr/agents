@@ -841,12 +841,16 @@ def run_comprehensive_backtest():
                 print(f"  ${balance}/${days}d: {ret*100:>6.1f}% total, {ann_ret*100:>6.1f}% annualized")
     # Risk assessment
     print("\n🛡️ Risk Assessment:")
-    drawdowns = [data['max_drawdown'] for data in results.values()]
-    sharpe_ratios = [data['sharpe_ratio'] for data in results.values()]
+    all_results = [results_matrix[balance][days] for balance in starting_balances for days in time_periods if results_matrix[balance][days]]
+    drawdowns = [data['max_drawdown'] for data in all_results]
+    sharpe_ratios = [data['sharpe_ratio'] for data in all_results]
 
-    print(f"Average Max Drawdown: {sum(drawdowns)/len(drawdowns)*100:.2f}%")
-    print(f"Average Sharpe Ratio: {sum(sharpe_ratios)/len(sharpe_ratios):.2f}")
-    print(f"Best Sharpe Ratio: {max(sharpe_ratios):.2f}")
+    if drawdowns:
+        print(f"Average Max Drawdown: {sum(drawdowns)/len(drawdowns)*100:.2f}%")
+        print(f"Average Sharpe Ratio: {sum(sharpe_ratios)/len(sharpe_ratios):.2f}")
+        print(f"Best Sharpe Ratio: {max(sharpe_ratios):.2f}")
+    else:
+        print("No valid results for risk assessment")
     # Investment recommendations
     print("\n💡 RECOMMENDATIONS:")
     print("1. Start with $100-500 for optimal risk-adjusted returns")
